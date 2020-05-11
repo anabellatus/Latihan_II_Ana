@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.Nullable
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_my_friends.*
 
 class MyFriendsFragment : Fragment() {
@@ -46,4 +47,8 @@ class MyFriendsFragment : Fragment() {
         listTeman.add(MyFriends("Bella", "Perempuan", "bellatusana@gmail.com", "0895342613748", "Jalan sendiri"))
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        this.clearFindViewByIdCache()
+    }
 }
